@@ -1,17 +1,16 @@
-import httpx
-from prefect import flow
+# This is a sample Python script.
+
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-@flow(log_prints=True)
-def get_repo_info(repo_name: str = "PrefectHQ/prefect"):
-    url = f"https://api.github.com/repos/{repo_name}"
-    response = httpx.get(url)
-    response.raise_for_status()
-    repo = response.json()
-    print(f"{repo_name} repository statistics 🤓:")
-    print(f"Stars 🌠 : {repo['stargazers_count']}")
-    print(f"Forks 🍴 : {repo['forks_count']}")
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-if __name__ == "__main__":
-    get_repo_info.serve(name="example-flow")
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
